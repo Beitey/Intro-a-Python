@@ -189,17 +189,4 @@ print(f"Hola, este es un objeto que fue guardado {x} veces")
 
 ## Función Input:
 
-La función input es una de las mas importantes debido a que nos permite recibir texto del usuario para darle un output:
-
-```{python}
-# Debido al formato de Rmarkdown no es posible recibir inputs por lo que dejaré un archivo de testeo:
-
-#name = input("Hola, como se llama usted? \n")
-#comida = input("Que desea comer? \n") 
-#print(f"Muy bien {name}, le traeremos su {comida} de inmediato")
-
-
-# EL uso de \n nos permite hacer un salto de linea. El \ nos permite escribir caracteres como "" sin afectar al objeto string. 
-
-
-```
+La función input es una de las mas importantes debido a que nos permite recibir texto del usuario para darle un output. Puedes ver un ejemplo aqui: [Ejemplo de Input](https://beitey.github.io/Intro-a-Python/Codigos/Input_example.py)
