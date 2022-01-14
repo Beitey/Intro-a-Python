@@ -1,10 +1,15 @@
-# Introduccion a python
+# Introducción a python
 
-Este repositorio contiene la información basica para aprender a programar. Con cada actualizacion se añadiran nuevos conocimientos y 
-mas desafios para que puedan aprender a programar en Python.
+Este repositorio contiene la información básica para aprender a programar. Con cada actualización se añadirán nuevos conocimientos y mas desafíos para que puedan aprender a programar en Python.
 
-Pueden instalar python dependiendo de su sistema operativo en la siguiente página: 
+Pueden instalar python dependiendo de su sistema operativo en las siguientes páginas:
 
-windows https://www.python.org/downloads/
-mac https://www.python.org/downloads/macos/
-linux https://www.python.org/downloads/source/
+-   [Windows](https://www.python.org/downloads/ "Python for windows")
+
+-   [Mac](https://www.python.org/downloads/macos/ "Python for mac")
+
+-   [Linux](https://www.python.org/downloads/source/ "Python for linux")
+
+El curso Consta de las siguientes 3 partes:
+
+1.  Funciones básicas y variables
