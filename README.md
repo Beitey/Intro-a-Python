@@ -12,4 +12,4 @@ Pueden instalar python dependiendo de su sistema operativo en las siguientes pá
 
 El curso Consta de las siguientes 3 partes:
 
-1.  Funciones básicas y variables
+1.  [Funciones básicas y variables](https://beitey.github.io/Intro-a-Python/Productos/Intro-a-progra.html "Clase 1")
