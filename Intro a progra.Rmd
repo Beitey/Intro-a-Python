@@ -1,0 +1,205 @@
+---
+title: "Mini Introduccion a la Programacion"
+author: "Francisco Vega"
+output:
+  rmdformats::downcute:
+    self_contained: true
+    default_style: "dark"
+    downcute_theme: "default"
+---
+
+Para este mini curso usaremos python:
+
+## Variables:
+
+Una variable es una forma de guardar un objeto, por ejemplo, si quisiera guardar el numero 5 en una variable x debo hacer lo siguiente:
+
+```{python}
+x = 5
+```
+
+Como podemos ver, al guardar una variable esta no aparece en la consola, para esto tendremos que imprimir la variable en la consola con la función *print()*
+
+```{python}
+## Notamos que en Rmarkdown basta con escribir la variable, aun así en python
+### esto no funciona. Por ello usaremos siempre la funcion print()
+print(x)
+```
+
+Una variable puede ser modificada varias veces y conservará su ultima modificación:
+
+```{python}
+x = 5
+print(x)
+x = "uwu"
+print(x)
+```
+
+Por ultimo veremos que las variables tienen diferentes tipos:
+
+-   string: Formato de texto, la función *str(obj)* transforma cualquier obj en string
+
+-   int: Número entero (integer), la función *int(obj)* transforma un obj a entero si solo si este obj está en base 10
+
+-   float: Número decimal, la función *float(obj)* transforma un obj a decimal si solo si este obj es un entero o está escrito en la forma "a.b" en un string
+
+-   bool: Booleano, es un objeto True o False. Se puede asignar un valor de True con 1 y False con 0, o se puede usar "==" para comparar dos objetos y ver si son iguales
+
+-   complex: Números complejos, están en formato a + b \* j
+
+## Operadores:
+
+Las variables pueden interactuar entre si, por ejemplo:
+
+```{python}
+x = 5
+y = 2
+
+print(x+y)
+```
+
+Interactuan a través de los operadores:
+
+```{python}
+a = "Hola a "
+b = "todo el mundo"
+
+x = 2
+y = 5
+
+#Suma o concatenacion en caso de texto:
+print(x + y)
+print(a + b)
+```
+
+```{python}
+#Resta:
+print(x - y)
+```
+
+```{python}
+#Multiplicacion o repeticion de texto:
+print(x * y)
+print(a * x) # Escribirá x veces el string a (x debe ser int)
+```
+
+```{python}
+#Divicion:
+print(x / y)
+```
+
+```{python}
+#Potencia (se puede usar ** o la función pow(base, exponente)):
+print(y ** x) 
+print(pow(y, x))
+```
+
+```{python}
+#Divicion entera (retorna solo la parte entera):
+x = 99
+y = 10
+
+print(x // y)
+```
+
+```{python}
+#Resto o modulo (entrega el resto de una divición):
+x = 2
+y = 3
+print(x % y)
+```
+
+La prioridad se sigue al igual que Papomudas.
+
+## Comparadores:
+
+Las variables se pueden comparar para obtener un bool.
+
+```{python}
+# < <=    menor, menor o igual 
+# > >=    mayor, mayor o igual
+# ==  !=  igual a, distinto a
+# and     Ambos Verdadero
+# or      Almenos un Verdadero
+# not     Negación
+# Ejemplos:
+x = 2
+y = 2
+print(x < y)
+
+z = 10
+print( x == y and z < y )
+
+print( x == y or z < y)
+
+print( not( x == y or z <= y ) )
+```
+
+La prioridad se sigue a través de: ( ) ; or ; and ; not ; comparadores
+
+## Funciones predefinidas:
+
+Hay muchas funciones en python, para empezar veremos las más básicas, estas nos permitirán convertir de un tipo de variable a otros tipos:
+
+```{python}
+x = int("10") #Transformamos "10" a Numero entero
+y = float(x) #Transformamos x a decimal
+z = str(x) #Transformamos x a texto
+# list(obj) transforma al objeto en lista, lo veremos mas adelante. 
+
+# Curiosidades:
+## Si "x = 10.2313" y usamos "y = int(x)" este dará "y = 10"
+## Si "x = 10" y usamos "y = float(x)" este dará "y = 10.0"
+
+# Errores:
+## Si x = "10.4" y usamos int(x) lanzará error (Se puede usar "int(float(x))" )
+```
+
+## Función print:
+
+print( obj ) imprime al obj en la consola. Se pueden imprimir múltiples objetos de la siguiente forma:
+
+```{python}
+a = "Hola a todo"
+b = "el mundo, hay"
+c = "planetas en total"
+
+x = 8 #Pluton ya no lo es uwu
+print(a, b, x, c) # Se pueden imprimir multiples argumentos separados por espacios
+
+print(a, b, x, c, sep = ";") # Se puede cambiar el separador.
+
+print(a+b) #Tambien se puede concatenar el texto.
+```
+
+Una de las utilidades del print es arrojar un output al usuario con un texto claro, pero hay veces en las que no queremos asignar el texto a una variable para retornarlo, así que podemos usar directamente un objeto en la función:
+
+```{python}
+print("Hola, este es un objeto string que fue guardado", 0, "veces")
+```
+
+Si no queremos hacer el uso del espacio podemos usar el siguiente método:
+
+```{python}
+# Con el uso de {x} se reemplazará por su valor en la variale x
+x = 0
+print(f"Hola, este es un objeto que fue guardado {x} veces")
+
+```
+
+## Función Input:
+
+La función input es una de las mas importantes debido a que nos permite recibir texto del usuario para darle un output:
+
+```{python}
+# Debido al formato de Rmarkdown no es posible recibir inputs por lo que dejaré un archivo de testeo:
+
+#name = input("Hola, como se llama usted? \n")
+#comida = input("Que desea comer? \n") 
+#print(f"Muy bien {name}, le traeremos su {comida} de inmediato")
+
+
+# EL uso de \n nos permite hacer un salto de linea. El \ nos permite escribir caracteres como "" sin afectar al objeto string. 
+
+
+```
