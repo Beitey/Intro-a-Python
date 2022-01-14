@@ -1,4 +1,4 @@
-# Introducción a python
+# Introducción a python [:desktop_computer:](https://beitey.github.io/Intro-a-Python/)
 
 Este repositorio contiene la información básica para aprender a programar. Con cada actualización se añadirán nuevos conocimientos y mas desafíos para que puedan aprender a programar en Python.
 
