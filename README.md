@@ -20,7 +20,11 @@ El curso Consta de las siguientes 3 partes:
 
 1.  [Funciones básicas y variables](https://beitey.github.io/Intro-a-Python/Productos/Intro-a-progra.html "Clase 1")
 
-## Extras:
+## Desafíos:
+
+Estos desafíos te ayudarán a hacer un código a tu manera, lo que te ayudará a tener diferentes ideas para programar en un futuro. Así que te invito a pasar a la sala de desafíos clickeando el siguiente emoji [:brain:](https://beitey.github.io/Intro-a-Python/Desafios/)
+
+Extras:
 
 Si quieres aumentar tus conocimientos de python te recomendamos clickear el emoji [:mouse2:](https://www.w3schools.com/python/default.asp)
 
