@@ -16,7 +16,7 @@ A la hora de instalar python debes incluir python al PATH, esto nos evitará muc
 
 ## Cursos:
 
-El curso Consta de las siguientes 3 partes:
+El curso Consta de las siguientes partes:
 
 1.  [Funciones básicas y variables](https://beitey.github.io/Intro-a-Python/Productos/Intro-a-progra.html "Clase 1")
 2.  [Condiciones y ciclos](https://beitey.github.io/Intro-a-Python/Productos/clase-2.html "clase 2")
@@ -25,7 +25,7 @@ El curso Consta de las siguientes 3 partes:
 
 Estos desafíos te ayudarán a hacer un código a tu manera, lo que te ayudará a tener diferentes ideas para programar en un futuro. Así que te invito a pasar a la sala de desafíos clickeando el siguiente emoji [:nerd_face:](https://beitey.github.io/Intro-a-Python/Desafios/)
 
-Extras:
+## Extras:
 
 Si quieres aumentar tus conocimientos de python te recomendamos clickear el emoji [:mouse2:](https://www.w3schools.com/python/default.asp)
 
