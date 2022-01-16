@@ -8,7 +8,7 @@ output:
     downcute_theme: "default"
 ---
 
-Para este mini curso usaremos python:
+# Parte 1: Funciones básicas y variables.
 
 ## Variables:
 
