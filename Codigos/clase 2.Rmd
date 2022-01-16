@@ -1,0 +1,197 @@
+---
+title: "Mini Introduccion a la Programacion"
+author: "Francisco Vega"
+output:
+  rmdformats::downcute:
+    self_contained: true
+    default_style: "dark"
+    downcute_theme: "default"
+---
+
+# Parte 2: Condiciones y ciclos
+
+## Condiciones: 
+
+En un programa el usuario puede tomar diferentes decisiones que afectarán al flujo del programa, por ejemplo, en un juego puedo abrir o no abrir una puerta, y dependiendo de que elija el usuario el programa hará una acción o hará otra.
+
+Para esto utilizaremos los comparadores:
+
+-   " \< \<= " menor, menor o igual
+-   " > >= " mayor, mayor o igual
+-   " == != " igual a, distinto a
+-    and Ambos Verdadero
+-    or Almenos un Verdadero
+-    not Negación
+
+Estos "comparadores" o condiciones lógicas nos arrojarán True o False dependiendo de si la condición lógica se cumple o no. Pero por si solas no pueden definir el flujo del programa. Para esto usaremos IF - ELIF - ELSE
+
+El uso del IF nos permite entrar a una parte del código si es que una condición se cumple, por ejemplo:
+
+```{python}
+edad1 = 10
+if edad1 >= 18:
+  print("Puedes comprar alcohol ya que tienes", edad1, "años")
+```
+
+Vemos que el anterior código no imprime nada, ya que la condición no se cumplió, ahora usaremos una edad \>= a 18
+
+```{python}
+edad2 = 29
+if edad2 >= 18:
+  print("Puedes comprar alcohol ya que tienes", edad2, "años")
+```
+
+En este caso la condición si se cumple, por lo que, si imprime lo que está indentado:
+
+Un flujo normal se vería de esta forma:
+
+> [if (condición1):]{.smallcaps}
+>
+> [----código indentado corre si se cumple condición1]{.smallcaps}
+
+Ahora que pasa si quiero mostrar un mensaje para los menores de 18 años?
+
+Para esto usaremos "ELSE":
+
+else funciona del mismo modo que if, solo que no recibe condiciones. Esta hará que todo lo que no se cumpla en las condiciones anteriores entre en else (en el ejemplo entran las edades menores a 18 años). Por ejemplo:
+
+```{python}
+edad1 = 10
+if edad1 >= 18:
+  print("Puedes comprar alcohol ya que tienes", edad1, "años")
+else:
+  print("Lo siento, aún te faltan", 18-edad1, "años para beber alcohol legalmente")
+```
+
+Ahora que pasa si tenemos mas variables como país (tendremos en cuenta que en USA se puede comprar alcohol a los 21 años), para esto usaremos "ELIF"
+
+ELIF es una combinación de else e if, y continua después de un if u otro elif siguiendo el siguiente esquema
+
+> [if condición 1:]{.smallcaps}
+>
+> [---código]{.smallcaps}
+>
+> [elif condición 2:]{.smallcaps}
+>
+> [---código]{.smallcaps}
+>
+> [else:]{.smallcaps}
+>
+> [---código]{.smallcaps}
+
+Siguiendo con el ejemplo de la edad:
+
+```{python}
+edad3 = 20
+pais = "USA"
+
+if edad3 < 18 and pais != "USA":
+  print("Lo siento, aún te faltan", 18-edad3, "años para beber alcohol legalmente")
+  
+elif edad3 < 21 and pais == "USA":
+  print("Lo siento, aún te faltan", 21-edad3, "años para beber alcohol legalmente")
+  
+else:
+  print("Puedes comprar alcohol ya que tienes", edad3, "años")
+  
+```
+
+Podemos notar que entra en el elif ya que la edad es menor a 21 y es de USA. También se podría hacer lo siguiente:
+
+```{python}
+edad3 = 20
+pais = "USA"
+
+if edad3 < 18 and pais != "USA":
+  print("Lo siento, aún te faltan", 18-edad3, "años para beber alcohol legalmente")
+  
+else:
+  if edad3 < 21:
+    print("Lo siento, aún te faltan", 21-edad3, "años para beber alcohol legalmente")
+  else:
+    print("Puedes comprar alcohol ya que tienes", edad3, "años")
+```
+
+Ya que si no entra en el primer if entonces o es mayor a 18 años o es de USA. Luego entra al else y se vuelve a verificar la edad.
+
+Ambos formas llegan a lo mismo, pero en el caso de que tengamos mas condiciones es mas fácil hacer uso de "ELIF" ya que nos ahorramos muchas lineas de código, lo que a la larga nos hará mas fácil encontrar errores.
+
+## Ciclos:
+
+Un ciclo es una sección del código que se repite (ya sea hasta que una condición se cumpla o un numero determinado de veces). Esto nos sirve para escribir una parte del código que se usará repetidas veces. Por ejemplo si queremos saber si un numero es primo deberemos ver numero por numero desde el 2 hasta el número anterior al que queremos verificar.
+
+Para esto podemos usar "WHILE", este funciona igual que "IF", solo que mientras que la condición se cumpla el ciclo continuará. Por ejemplo:
+
+```{python}
+
+numero = 817
+divisor = 2
+#Asumiremos que es primo hasta que se demuestre lo contrario
+primo = True
+while divisor < numero and primo:
+  #Este while continuará hasta que primo sea falso o el divisor sea igual al numero
+  if numero%divisor == 0:
+    primo = False
+  divisor += 1 # Es lo mismo que escribir divisor = divisor + 1
+
+if primo: # if true/false
+  print(f"El numero {numero} es primo")
+else:
+  print(f"El numero {numero} es divisible por {divisor - 1}, por ende, no es primo")
+```
+
+Sin el uso del while tendríamos que haber hecho 19 if y elif para ver que no era primo. Debido a que en las condiciones del while especificamos todas las condiciones para detenerlo este no siguió corriendo (ahorrándonos mucho tiempo de espera). En el caso de que no queramos escribir una condición tan larga podemos hacer uso de "BREAK", el cual corta un ciclo cuando este se usa, por ejemplo:
+
+```{python}
+numero = 817
+divisor = 2
+#Asumiremos que es primo hasta que se demuestre lo contrario
+primo = True
+while True:
+  #Correra por siempre?
+  if numero%divisor == 0:
+    primo = False
+    break # Se rompe el ciclo si es primo
+  divisor += 1 # Es lo mismo que escribir divisor = divisor + 1
+  if divisor == numero:
+    break # Se rompe el ciclo si el divisor es igual al numero
+
+if primo: # if true/false
+  print(f"El numero {numero} es primo")
+else:
+  print(f"El numero {numero} es divisible por {divisor}, por ende, no es primo")
+```
+
+En este ejemplo nosotros fuimos sumando 1 al divisor, pero que pasa si nosotros no queremos preocuparnos de ir sumándole 1 cada vez que el ciclo termine? Para esto tenemos el ciclo "FOR"
+
+FOR es un ciclo que corre en un rango u objeto. En el ejemplo anterior nuestro while corría desde el 2 hasta el numero anterior al numero que queríamos verificar. Pero esto puede mejorar, sabemos que si un numero divide a otro automáticamente nos dice que hay otro numero que lo divide, por ejemplo el 18, 18 / 3 = 6, por ende el 6 también divide al 18. Pero podemos notar que en la raíz cuadrada del numero ya habremos descubierto todos los divisores. Por ende generaremos un rango mas pequeño para recorrer:
+
+```{python}
+numero = 817
+for i in range(2, int(pow(numero,1/2)) + 1):
+  if numero % i == 0:
+    primo = False
+    break #Evitamos que sigua corriendo el programa
+    
+if primo:
+  print(f"El numero {numero} es primo")
+else:
+  print(f"El numero {numero} no es primo y es divisible por {i}")
+```
+
+"for variable in objeto:" crea una variable que recorre un objeto, en el ejemplo recorrio el rango desde 2 hasta la parte entera de la raiz del numero + 1, ya que el último valor en range no lo corre, por ejemplo:
+
+```{python}
+for i in range(4): 
+  print(i)
+```
+
+Si en range( ) no ponemos el numero desde donde iniciar entonces automáticamente empieza a contar desde 0. También podemos recorrer strings o listas (más adelante veremos que es una lista)
+
+Por ejemplo:
+
+```{python}
+nombre = "José"
+for letra in nombre:
+  print(letra)
+```
