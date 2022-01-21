@@ -28,10 +28,12 @@ La palabra o frase de entrada puede contener tildes, mayúsculas y espacios. Por
 
 Una habilidad importante es el saber trabajar con listas de listas (o matrices), para este caso deberás crear una función que reciba una matriz cuadrada y retornar la transpuesta de la matriz
 
+\* Como extra puedes mostrar las matrices como matrices y no como listas \*
+
 #### Soluciones:
 
--   Desafío 1
--   Desafío 2
--   Desafío 3
+-   [Desafío 1](https://beitey.github.io/Intro-a-Python/Desafios/Soluciones/Desafio_1.py "Desafio 1 solucion")
+-   [Desafío 2](https://beitey.github.io/Intro-a-Python/Desafios/Soluciones/Desafio_2.py "Desafio 2 Solucion")
+-   [Desafío 3](https://beitey.github.io/Intro-a-Python/Desafios/Soluciones/Desafio_3.py "Desafio 3 solucion")
 
 ¿Quieres aportar con tu desafío? Envíalo aquí: vega_fra\@uc.cl
