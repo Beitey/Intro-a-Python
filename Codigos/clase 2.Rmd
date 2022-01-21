@@ -10,7 +10,7 @@ output:
 
 # Parte 2: Condiciones y ciclos
 
-## Condiciones: 
+## Condiciones:
 
 En un programa el usuario puede tomar diferentes decisiones que afectarán al flujo del programa, por ejemplo, en un juego puedo abrir o no abrir una puerta, y dependiendo de que elija el usuario el programa hará una acción o hará otra.
 
@@ -19,9 +19,9 @@ Para esto utilizaremos los comparadores:
 -   " \< \<= " menor, menor o igual
 -   " > >= " mayor, mayor o igual
 -   " == != " igual a, distinto a
--    and Ambos Verdadero
--    or Almenos un Verdadero
--    not Negación
+-   and Ambos Verdadero
+-   or Almenos un Verdadero
+-   not Negación
 
 Estos "comparadores" o condiciones lógicas nos arrojarán True o False dependiendo de si la condición lógica se cumple o no. Pero por si solas no pueden definir el flujo del programa. Para esto usaremos IF - ELIF - ELSE
 
