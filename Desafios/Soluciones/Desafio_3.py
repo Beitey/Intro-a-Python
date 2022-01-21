@@ -1,4 +1,4 @@
-# Para este desafio usaremos listas, ciclos for
+# Para este desafio usaremos listas, ciclos for, append y posiciones de matriz
 
 def transpuesta(matriz):
     dimension = len(matriz)
