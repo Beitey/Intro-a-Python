@@ -1,0 +1,113 @@
+---
+title: "Mini Introduccion a la Programacion"
+author: "Francisco Vega"
+output:
+  rmdformats::downcute:
+    self_contained: true
+    default_style: "dark"
+    downcute_theme: "default"
+---
+
+# Parte 3: Funciones propias, imports y strings
+
+## Funciones propias:
+
+Hay veces en las que no existe la función que deseas, es por eso que python nos permite crear nuestras propias funciones, para esto usaremos "def", esto nos permite crear una función con un nombre escogido por nosotros y argumentos de entrada definidos por nosotros, por ejemplo:
+
+```{python}
+def formula_general(a, b, c):
+  x1 = (-b + pow(b**2 - 4*a*c, 1/2)) / (2*a)
+  x2 = (-b - pow(b**2 - 4*a*c, 1/2)) / (2*a)
+```
+
+Esta función por si sola no hace nada, debemos llamar a nuestra función:
+
+```{python}
+formula_general(1, 3, 1)
+```
+
+Sigue sin darnos un output, esto es porque no retorna o imprime nada. Si usamos print para mostrar x1 o x2 estás una vez finalizada la función dejarán de existir:
+
+```{python}
+def formula_general(a, b, c):
+  x1 = (-b + pow(b**2 - 4*a*c, 1/2)) / (2*a)
+  x2 = (-b - pow(b**2 - 4*a*c, 1/2)) / (2*a)
+  print(x1," *** ",x2)
+
+#LLamamos a la funcion:
+formula_general(1, 3, 1)
+#print(x1) nos dará error
+```
+
+Como las imprimimos, las variables x1 y x2 no existen fuera de la función, por ende si quisiera operar con ellas deberé retornarlas con el comando "return":
+
+```{python}
+def formula_general(a, b, c):
+  x1 = (-b + pow(b**2 - 4*a*c, 1/2)) / (2*a)
+  x2 = (-b - pow(b**2 - 4*a*c, 1/2)) / (2*a)
+  return (x1,x2)
+
+#Ahora la funcion retorna los valores, pero debemos guardarlos en variables
+# Hablaremos mas adelante de las posiciones [0],[1],...,[i]
+x1 = formula_general(1, 3, 1)[0]
+x2 = formula_general(1, 3, 1)[1]
+print(x1," *** ",x2)
+```
+
+Podemos recibir múltiples argumentos ya sea en variables o directamente como objetos:
+
+```{python}
+
+def ladrar(nombre, edad):
+  print(f"{nombre} ladra {edad} veces")
+  for i in range(edad):
+    print("*Wooof*")
+  
+# Con objetos
+ladrar("Simon", 11)
+```
+
+```{python}
+# Con variables
+perrito = "Firulais"
+años = 5
+ladrar(perrito, años)
+```
+
+## Imports:
+
+Hay ocasiones en las que hay funciones que ya existen (creadas por nosotros o por gente profesional), para usarlas debemos importarlas a nuestro codigo con el comando "import"
+
+Una librería es un archivo python con muchas funciones, una librería que usaremos mucho es "random" la cual nos permite generar números aleatorios.
+
+Importemos la librería y usemos la función "random.randint" para crear un dado:
+
+```{python}
+import random
+
+# randint escog un numero aleatorio entre el primer argumento y el segundo incluyendolos
+dado = random.randint(1,6)
+print(dado)
+```
+
+Si solo queremos importar una función como randint podemos usar "from" y con "as" podemos cambiarle el nombre:
+
+```{python}
+from random import randint as dadito
+# De la libreria "random" importa "random integer" con el nombre "dadito"
+print(dadito(1,6))
+```
+
+Hay muchas librerías como para verlas todas, por lo que, ahora usaremos funciones propias desde otros archivos python:
+
+Dentro del mismo directorio cree un archivo python llamado "rombo.py" que contiene una función llamada "crear_rombo", la cual dado un numero impar retorna un rombo con la linea del medio igual al numero recibido de la siguiente manera:
+
+```{r}
+dir()
+```
+
+```{python}
+import rombo
+
+rombo.crear_rombo(5)
+```
