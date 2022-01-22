@@ -74,6 +74,24 @@ años = 5
 ladrar(perrito, años)
 ```
 
+Por último y no menos importante, una función puede llamarse a si misma:
+
+```{python}
+# Esta funcion verifica si un numero pertenece a la sucesion de fibonacci
+def fibonacci(a, b, numero):
+  # si la suma da el numero retorna True
+  if a + b == numero:
+    return True
+  # si la suma se pasa del numero retorna False
+  elif a + b > numero:
+    return False
+  # En otros casos retorna lo que la funcion en b y b+a retorne
+  else:
+    return fibonacci(b, b+a, numero)
+
+fibonacci(1,1,89) #89 está en fibonacci
+```
+
 ## Imports:
 
 Hay ocasiones en las que hay funciones que ya existen (creadas por nosotros o por gente profesional), para usarlas debemos importarlas a nuestro codigo con el comando "import"
@@ -102,12 +120,83 @@ Hay muchas librerías como para verlas todas, por lo que, ahora usaremos funcion
 
 Dentro del mismo directorio cree un archivo python llamado "rombo.py" que contiene una función llamada "crear_rombo", la cual dado un numero impar retorna un rombo con la linea del medio igual al numero recibido de la siguiente manera:
 
-```{r}
-dir()
-```
-
 ```{python}
 import rombo
 
 rombo.crear_rombo(5)
+```
+
+Puedes ver el código aquí: [rombo.py](https://beitey.github.io/Intro-a-Python/Codigos/rombo.py)
+
+## Strings:
+
+Como vimos en la primera parte, los strings o texto son una clase en python la cual tiene diversas funciones, algunas de estas son:
+
+-   \+ concatena strings 'hol' + 'a' = 'hola'
+
+-    in retorna true si es que el string A esta en B \[ "hol" in "hola como estas": TRUE \]\["alien" in "el perro come maiz": FALSE\]
+
+-   string.find(A) hace lo mismo que in pero arroja la posición donde esta el string A, {si A no esta en el string entonces retorna -1}
+
+-   string.rfind(A)lo mismo que find pero de derecha a izquierda
+
+-   string.upper() / string.lower() transforma a mayusculas/minusculas respectivamente
+
+-    string.replace('a','b') remplaza a por b en el string
+
+-    string.strip() retorna un nuevo string en el que se eliminan los espacios iniciales y los finales
+
+-    string.split(a) separa en una lista al string por cada caracter a
+
+-    a.join(lista) suponiendo que a es un string, se retorna un nuevo string con los objetos de la lista separados por a
+
+Una cosa importante a notar es que si usamos alguna función que modifique al string esta debe ser guardada en una nueva variable:
+
+```{python}
+# Sin guardar
+string1 = "Tengo sueño"
+string1.upper()
+print(string1)
+
+```
+
+```{python}
+# Con guardar
+string2 = "Iré a dormir"
+string2 = string2.upper()
+print(string2)
+```
+
+También podemos recorrer el string por posiciones (tener en cuenta que python toma como primera posición el 0):
+
+```{python}
+s = "Hola, este es un string"
+
+# Primera posicion
+s[0]
+```
+
+```{python}
+# Ultima posicion
+s[-1]
+```
+
+```{python}
+# Sub posiciones desde la primera hasta la tercera posicion
+s[0:3]
+```
+
+```{python}
+# Sub posiciones saltando cada 2 espacios:
+s[::2] #Si no incluimos el primero numero automaticamente nos da desde el 0
+######## Lo mismo para el ultimo numero
+```
+
+Podemos recorrer el string con un for:
+
+```{python}
+# Recorremos el string con un for:
+s = "uWu"
+for letra in s:
+  print(letra)
 ```

@@ -122,6 +122,7 @@
             <ul>
             <li><a href="#funciones-propias">Funciones propias:</a></li>
             <li><a href="#imports">Imports:</a></li>
+            <li><a href="#strings">Strings:</a></li>
             </ul></li>
             </ul>
           </div>
@@ -207,6 +208,21 @@ ladrar(perrito, años)</code></pre>
 ## *Wooof*
 ## *Wooof*
 ## *Wooof*</code></pre>
+<p>Por último y no menos importante, una función puede llamarse a si misma:</p>
+<pre class="python"><code># Esta funcion verifica si un numero pertenece a la sucesion de fibonacci
+def fibonacci(a, b, numero):
+  # si la suma da el numero retorna True
+  if a + b == numero:
+    return True
+  # si la suma se pasa del numero retorna False
+  elif a + b &gt; numero:
+    return False
+  # En otros casos retorna lo que la funcion en b y b+a retorne
+  else:
+    return fibonacci(b, b+a, numero)
+
+fibonacci(1,1,89) #89 está en fibonacci</code></pre>
+<pre><code>## True</code></pre>
 </div>
 <div id="imports" class="section level2">
 <h2>Imports:</h2>
@@ -218,7 +234,7 @@ ladrar(perrito, años)</code></pre>
 # randint escog un numero aleatorio entre el primer argumento y el segundo incluyendolos
 dado = random.randint(1,6)
 print(dado)</code></pre>
-<pre><code>## 4</code></pre>
+<pre><code>## 3</code></pre>
 <p>Si solo queremos importar una función como randint podemos usar “from” y con “as” podemos cambiarle el nombre:</p>
 <pre class="python"><code>from random import randint as dadito
 # De la libreria &quot;random&quot; importa &quot;random integer&quot; con el nombre &quot;dadito&quot;
@@ -226,10 +242,6 @@ print(dadito(1,6))</code></pre>
 <pre><code>## 3</code></pre>
 <p>Hay muchas librerías como para verlas todas, por lo que, ahora usaremos funciones propias desde otros archivos python:</p>
 <p>Dentro del mismo directorio cree un archivo python llamado “rombo.py” que contiene una función llamada “crear_rombo”, la cual dado un numero impar retorna un rombo con la linea del medio igual al numero recibido de la siguiente manera:</p>
-<pre class="r"><code>dir()</code></pre>
-<pre><code>## [1] &quot;__pycache__&quot;        &quot;clase-3.html&quot;       &quot;clase-3.Rmd&quot;       
-## [4] &quot;clase 2.Rmd&quot;        &quot;clase 3.Rmd&quot;        &quot;Input_example.py&quot;  
-## [7] &quot;Intro a progra.Rmd&quot; &quot;rombo.py&quot;</code></pre>
 <pre class="python"><code>import rombo
 
 rombo.crear_rombo(5)</code></pre>
@@ -238,6 +250,58 @@ rombo.crear_rombo(5)</code></pre>
 ## *****
 ##  ***
 ##   *</code></pre>
+<p>Puedes ver el código aquí: <a href="https://beitey.github.io/Intro-a-Python/Codigos/rombo.py">rombo.py</a></p>
+</div>
+<div id="strings" class="section level2">
+<h2>Strings:</h2>
+<p>Como vimos en la primera parte, los strings o texto son una clase en python la cual tiene diversas funciones, algunas de estas son:</p>
+<ul>
+<li><p>+ concatena strings ‘hol’ + ‘a’ = ‘hola’</p></li>
+<li><p>in retorna true si es que el string A esta en B <span class="math display">\[ &quot;hol&quot; in &quot;hola como estas&quot;: TRUE \]</span><span class="math display">\[&quot;alien&quot; in &quot;el perro come maiz&quot;: FALSE\]</span></p></li>
+<li><p>string.find(A) hace lo mismo que in pero arroja la posición donde esta el string A, {si A no esta en el string entonces retorna -1}</p></li>
+<li><p>string.rfind(A)lo mismo que find pero de derecha a izquierda</p></li>
+<li><p>string.upper() / string.lower() transforma a mayusculas/minusculas respectivamente</p></li>
+<li><p>string.replace(‘a’,‘b’) remplaza a por b en el string</p></li>
+<li><p>string.strip() retorna un nuevo string en el que se eliminan los espacios iniciales y los finales</p></li>
+<li><p>string.split(a) separa en una lista al string por cada caracter a</p></li>
+<li><p>a.join(lista) suponiendo que a es un string, se retorna un nuevo string con los objetos de la lista separados por a</p></li>
+</ul>
+<p>Una cosa importante a notar es que si usamos alguna función que modifique al string esta debe ser guardada en una nueva variable:</p>
+<pre class="python"><code># Sin guardar
+string1 = &quot;Tengo sueño&quot;
+string1.upper()</code></pre>
+<pre><code>## &#39;TENGO SUEÑO&#39;</code></pre>
+<pre class="python"><code>print(string1)</code></pre>
+<pre><code>## Tengo sueño</code></pre>
+<pre class="python"><code># Con guardar
+string2 = &quot;Iré a dormir&quot;
+string2 = string2.upper()
+print(string2)</code></pre>
+<pre><code>## IRÉ A DORMIR</code></pre>
+<p>También podemos recorrer el string por posiciones (tener en cuenta que python toma como primera posición el 0):</p>
+<pre class="python"><code>s = &quot;Hola, este es un string&quot;
+
+# Primera posicion
+s[0]</code></pre>
+<pre><code>## &#39;H&#39;</code></pre>
+<pre class="python"><code># Ultima posicion
+s[-1]</code></pre>
+<pre><code>## &#39;g&#39;</code></pre>
+<pre class="python"><code># Sub posiciones desde la primera hasta la tercera posicion
+s[0:3]</code></pre>
+<pre><code>## &#39;Hol&#39;</code></pre>
+<pre class="python"><code># Sub posiciones saltando cada 2 espacios:
+s[::2] #Si no incluimos el primero numero automaticamente nos da desde el 0
+######## Lo mismo para el ultimo numero</code></pre>
+<pre><code>## &#39;Hl,et su tig&#39;</code></pre>
+<p>Podemos recorrer el string con un for:</p>
+<pre class="python"><code># Recorremos el string con un for:
+s = &quot;uWu&quot;
+for letra in s:
+  print(letra)</code></pre>
+<pre><code>## u
+## W
+## u</code></pre>
 </div>
 </div>
 </div>
