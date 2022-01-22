@@ -20,6 +20,7 @@ El curso Consta de las siguientes partes:
 
 1.  [Funciones básicas y variables](https://beitey.github.io/Intro-a-Python/Productos/Intro-a-progra.html "Clase 1")
 2.  [Condiciones y ciclos](https://beitey.github.io/Intro-a-Python/Productos/clase-2.html "clase 2")
+3.  [Funciones propias, imports y strings](https://beitey.github.io/Intro-a-Python/Productos/clase-3.html "clase 3")
 
 ## Desafíos:
 
